@@ -1,0 +1,144 @@
+:root {
+  --text-color: #7c7c65;
+  --headline: #ced2a6;
+  --primary: #e2eab5;
+  --secondary: #ffc8868e;
+  --third: #ced2a6;
+  --background-color: linear-gradient(
+    13deg,
+    rgba(236, 229, 254, 1) 10%,
+    rgba(255, 249, 118, 1) 29%,
+    rgba(252, 255, 245, 1) 63%
+  );
+  --accent-yellow: #ffe59cb9;
+  --purple: rgba(215, 202, 246, 0.722);
+  --blue: #b1d1ce;
+
+  /* Glass effect */
+  --border-radius: 16px;
+  --box-shadow: 0 4px 30px rgba(106, 106, 106, 0.2);
+  --backdrop-filter: blur(4px);
+  --webkit-backdrop-filter: blur(4px);
+  --border: 1px solid rgba(255, 255, 255, 0.19);
+  --border-radius: 0.5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0;
+}
+
+header {
+  min-width: 100%;
+  margin: 0 0 2rem 0;
+  padding: 3rem 1rem;
+  text-align: center;
+  background-color: var(--blue);
+}
+
+.headline {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+main {
+  max-width: 80%;
+  margin: auto;
+}
+
+#quote-container {
+  opacity: 1;
+  text-align: start;
+}
+
+.author.hidden {
+  animation: crossfade 2s forwards;
+}
+
+@keyframes crossfade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+h1 {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 600;
+  color: var(--blue);
+}
+
+p {
+  font-size: 1.2rem;
+  color: var(--purple);
+}
+
+.quote-button {
+  background-color: var(--purple);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 8rem;
+  color: #fff;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateX(-150%);
+  animation: slideInLeft 1s forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-150%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 700px) {
+  .headline {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 40%;
+    margin: auto;
+    justify-content: space-around;
+  }
+
+  main {
+    display: grid;
+    max-width: 60%;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  #quote-container {
+    opacity: 1;
+    text-align: center;
+  }
+}
